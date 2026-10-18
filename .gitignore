@@ -1,0 +1,5 @@
+# 不带斜杠：开发期 node_modules 是指向 profile node_modules 的符号链接，
+# 写成 node_modules/ 只匹配目录，会把这条符号链接漏提交进库（连带本地绝对路径）。
+node_modules
+*.log
+.DS_Store

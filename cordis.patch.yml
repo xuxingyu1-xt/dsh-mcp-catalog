@@ -1,0 +1,12 @@
+# dsh-mcp-catalog bundle patch: inserts this plugin into a profile's layer stack.
+#
+# The row is created HERE by an `- insert:` block and never as a bare `- id: …`
+# entry: in a patch document a bare row only *modifies* an entry an earlier
+# layer already created, so a bare row here would be skipped with
+# "patch: entry … not found" and the plugin would not mount at all.
+#
+# The Config schema defaults supply the nested-bridge settings; a profile-level
+# bare row (written by the settings page) can override them later.
+- insert:
+    - id: mcp-catalog
+      name: 'dsh-mcp-catalog'
